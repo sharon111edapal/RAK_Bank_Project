@@ -1,7 +1,7 @@
 # Maven build container 
 
 #FROM maven:3.8.5-openjdk-11 AS maven_build
-FROM maven:3.8.5-openjdk-21-slim AS BUILD
+FROM maven:3.8.5-openjdk-17-slim AS BUILD
 
 COPY pom.xml /tmp/
 
