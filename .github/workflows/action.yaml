@@ -24,7 +24,7 @@ jobs:
         with:
           registry: ${{ env.CONTAINER_REGISTRY }}
           username: ${{ env.REPOSITORY_NAME }}
-          password: ${{ secrets.RAK_GITHUB_TOKEN_SECRET }}
+          password: ${{ secrets.RAK_DOCKERHUB_CREDS }}
 
       - name: Build and push Docker image - Dynamic
         uses: docker/build-push-action@v2
