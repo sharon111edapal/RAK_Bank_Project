@@ -1,7 +1,7 @@
 # Maven build container 
 
 #FROM maven:3.8.5-openjdk-11 AS maven_build
-FROM maven:3.8.5-openjdk-17-slim AS BUILD
+FROM adoptopenjdk:17-jdk AS BUILD
 
 COPY pom.xml /tmp/
 
@@ -9,11 +9,11 @@ COPY src /tmp/src/
 
 WORKDIR /tmp/
 
-RUN mvn package
+RUN ./mvnw clean package
 
 #pull base image
 
-FROM eclipse-temurin:11
+FROM adoptopenjdk:11-jre
 
 #copy hello world to docker image from builder image
 
