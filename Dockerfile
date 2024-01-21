@@ -13,7 +13,7 @@ RUN mvn package
 
 #pull base image
 
-FROM eclipse-temurin:11
+FROM openjdk:17-jdk
 
 #copy hello world to docker image from builder image
 
