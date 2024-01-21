@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-service  
+  namespace: sampleapp2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-service
+  template:
+    metadata:
+      labels:
+        app: api-service
+    spec:
+      containers:
+      - name: api-service
+        image:  sharon111edapal/samplerak:latest
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-service
+  namespace: sampleapp2
+spec:
+  type: NodePort
+  selector:
+    app: api-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080  # Assuming your application is running on port 8080
+      nodePort: 30000   # You can specify a specific nodePort or omit it to let Kubernetes assign one
+    
