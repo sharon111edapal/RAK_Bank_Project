@@ -9,8 +9,8 @@ COPY src /tmp/src/
 
 WORKDIR /tmp/
 
-#RUN mvn package
-RUN ./mvnw spring-boot:run
+RUN mvn package
+#RUN ./mvnw spring-boot:run
 
 #pull base image
 
