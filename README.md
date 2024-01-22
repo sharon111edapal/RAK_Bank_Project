@@ -9,7 +9,7 @@ This document is intended to explain how to automate the  Build and Deployment o
 
 	-	Login to the website https://start.spring.io/ and create an application with the below parameters.
 
-                Project		:	Maven
+                        Project		:	Maven
 				language	:	Java
 				Springboot	:	3.2.2
 				Metadata		:	rak.example.com
@@ -62,7 +62,7 @@ This document is intended to explain how to automate the  Build and Deployment o
 						
 	-	The deployment file will be creating the below resiurces
 	
-                *	A new Aamespace - rak
+                        *	A new Aamespace - rak
 				*	A Deployment with 1 replicaset 
 				*	A NodePort service to expose the application (8080 --> 30000)
 				
