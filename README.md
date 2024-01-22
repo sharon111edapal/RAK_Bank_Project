@@ -9,7 +9,7 @@ This document is intended to explain how to automate the  Build and Deployment o
 
 	-	Login to the website https://start.spring.io/ and create an application with the below parameters.
 
-                   Project		:	Maven
+                    Project		:	Maven
 				language	:	Java
 				Springboot	:	3.2.2
 				Metadata		:	rak.example.com
@@ -69,7 +69,8 @@ This document is intended to explain how to automate the  Build and Deployment o
 	-	Naviagate to Actions --> Docker Build --> RUn workflow to create a new run and validate the result.
 				
 4. Configure sonarqube for Code Analysis.
-]	-	Configure Sonarqube for codeanalysis on each pull request.
+
+	-	Configure Sonarqube for codeanalysis on each pull request.
 	-	Navigaet to https://sonarcloud.io/ website and create an Organization and Project.
 	-	Integrate SonarCloud with Git repo and update pom.xml with sonar property.
 	-	Create sonar.yml file under .github/workflows   directory and paste the auto generated content from the sonarCloud.
