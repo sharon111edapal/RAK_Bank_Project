@@ -1,4 +1,4 @@
-# Maven build container 
+# Maven build container..
 
 FROM maven:3.8.5-openjdk-17-slim AS BUILD
 COPY pom.xml /tmp/
