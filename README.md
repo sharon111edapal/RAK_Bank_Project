@@ -8,7 +8,8 @@ This document is intended to explain how to automate the  Build and Deployment o
 1. Create the Application and copy to GitHub
 
 	-	Login to the website https://start.spring.io/ and create an application with the below parameters.
-				Project		:	Maven
+
+                Project		:	Maven
 				language	:	Java
 				Springboot	:	3.2.2
 				Metadata		:	rak.example.com
@@ -48,8 +49,10 @@ This document is intended to explain how to automate the  Build and Deployment o
 					AWS_REGION: ap-south-1
 					
 		Configure the sensitive data and AWS credetials as secrets under the project. 
-				Repository --> Secrets & Variables --> Actions --> Repository Secrets
-	-	Finally deploy the application into EKS with the below configuration
+				
+                Repository --> Secrets & Variables --> Actions --> Repository Secrets
+	
+    -	Finally deploy the application into EKS with the below configuration
 	
 				   name: Deploy
 						run: |
@@ -58,20 +61,21 @@ This document is intended to explain how to automate the  Build and Deployment o
 						kubectl apply -f deployment.yaml
 						
 	-	The deployment file will be creating the below resiurces
-				*	A new Aamespace - rak
+	
+                *	A new Aamespace - rak
 				*	A Deployment with 1 replicaset 
 				*	A NodePort service to expose the application (8080 --> 30000)
 				
 	-	Naviagate to Actions --> Docker Build --> RUn workflow to create a new run and validate the result.
 				
 4. Configure sonarqube for Code Analysis.
-	-	Configure Sonarqube for codeanalysis on each pull request.
+]	-	Configure Sonarqube for codeanalysis on each pull request.
 	-	Navigaet to https://sonarcloud.io/ website and create an Organization and Project.
 	-	Integrate SonarCloud with Git repo and update pom.xml with sonar property.
 	-	Create sonar.yml file under .github/workflows   directory and paste the auto generated content from the sonarCloud.
 	-	After each pull reguest check the workflow runs under Actions --> SonalCloud
 	
 5. Access the application. 
-	-	Get the public IP of the Node and access the Application via NodePort (eg : 10.0.1.34:30000)
+    -	Get the public IP of the Node and access the Application via NodePort (eg : 10.0.1.34:30000)
  
 
